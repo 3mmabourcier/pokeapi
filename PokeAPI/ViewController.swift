@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let UrlDebut = "https://pokeapi.co/api/v2"
+    var UrlFin = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
