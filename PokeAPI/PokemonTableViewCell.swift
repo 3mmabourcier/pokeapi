@@ -8,8 +8,10 @@
 
 import UIKit
 
-class PokemonCollectionViewCell: UICollectionViewCell {
+class PokemonTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var champNom: UILabel!
     @IBOutlet weak var champId: UILabel!
+    
 }
