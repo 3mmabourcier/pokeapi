@@ -79,8 +79,9 @@
 		EC617A391DF0B36800AB21F9 /* typesPage-58.png in Resources */ = {isa = PBXBuildFile; fileRef = EC617A251DF0B36800AB21F9 /* typesPage-58.png */; };
 		EC617A3A1DF0B36800AB21F9 /* typesPage-59.png in Resources */ = {isa = PBXBuildFile; fileRef = EC617A261DF0B36800AB21F9 /* typesPage-59.png */; };
 		EC617A3B1DF0B36800AB21F9 /* typesPage-60.png in Resources */ = {isa = PBXBuildFile; fileRef = EC617A271DF0B36800AB21F9 /* typesPage-60.png */; };
-		EC617A3F1DF0C85F00AB21F9 /* BASIF___.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EC617A3D1DF0C85F00AB21F9 /* BASIF___.TTF */; };
-		EC617A401DF0C85F00AB21F9 /* info.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC617A3E1DF0C85F00AB21F9 /* info.txt */; };
+		EC617A441DF0CBA700AB21F9 /* fonty.TXT in Resources */ = {isa = PBXBuildFile; fileRef = EC617A421DF0CBA700AB21F9 /* fonty.TXT */; };
+		EC617A451DF0CBA700AB21F9 /* MISTV___.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EC617A431DF0CBA700AB21F9 /* MISTV___.TTF */; };
+		EC617A471DF0E1AC00AB21F9 /* masque.png in Resources */ = {isa = PBXBuildFile; fileRef = EC617A461DF0E1AC00AB21F9 /* masque.png */; };
 		ECA0D05C1DEF638D00E32ACF /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA0D05B1DEF638D00E32ACF /* PokemonTableViewCell.swift */; };
 		ECF3A6CF1DE775FF0034885C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3A6CE1DE775FF0034885C /* AppDelegate.swift */; };
 		ECF3A6D11DE775FF0034885C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3A6D01DE775FF0034885C /* ViewController.swift */; };
@@ -162,8 +163,9 @@
 		EC617A251DF0B36800AB21F9 /* typesPage-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-58.png"; sourceTree = "<group>"; };
 		EC617A261DF0B36800AB21F9 /* typesPage-59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-59.png"; sourceTree = "<group>"; };
 		EC617A271DF0B36800AB21F9 /* typesPage-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-60.png"; sourceTree = "<group>"; };
-		EC617A3D1DF0C85F00AB21F9 /* BASIF___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BASIF___.TTF"; sourceTree = "<group>"; };
-		EC617A3E1DF0C85F00AB21F9 /* info.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = info.txt; sourceTree = "<group>"; };
+		EC617A421DF0CBA700AB21F9 /* fonty.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fonty.TXT; sourceTree = "<group>"; };
+		EC617A431DF0CBA700AB21F9 /* MISTV___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MISTV___.TTF"; sourceTree = "<group>"; };
+		EC617A461DF0E1AC00AB21F9 /* masque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = masque.png; sourceTree = "<group>"; };
 		ECA0D05B1DEF638D00E32ACF /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		ECF3A6CB1DE775FF0034885C /* PokeAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF3A6CE1DE775FF0034885C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		EC6179A71DF0B33800AB21F9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EC617A461DF0E1AC00AB21F9 /* masque.png */,
 				EC617A131DF0B36800AB21F9 /* types_pagePoke */,
 				EC6179EA1DF0B36000AB21F9 /* types_liste */,
 				EC6179C11DF0B35000AB21F9 /* types_boutons */,
@@ -296,13 +299,13 @@
 			path = types_pagePoke;
 			sourceTree = "<group>";
 		};
-		EC617A3C1DF0C85F00AB21F9 /* basic_font */ = {
+		EC617A411DF0CBA700AB21F9 /* mister_vampire */ = {
 			isa = PBXGroup;
 			children = (
-				EC617A3D1DF0C85F00AB21F9 /* BASIF___.TTF */,
-				EC617A3E1DF0C85F00AB21F9 /* info.txt */,
+				EC617A421DF0CBA700AB21F9 /* fonty.TXT */,
+				EC617A431DF0CBA700AB21F9 /* MISTV___.TTF */,
 			);
-			path = basic_font;
+			path = mister_vampire;
 			sourceTree = "<group>";
 		};
 		ECF3A6C21DE775FE0034885C = {
@@ -337,7 +340,7 @@
 		ECF3A6E01DE7905E0034885C /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				EC617A3C1DF0C85F00AB21F9 /* basic_font */,
+				EC617A411DF0CBA700AB21F9 /* mister_vampire */,
 				EC6179A71DF0B33800AB21F9 /* images */,
 				ECF3A6E41DE798290034885C /* Test */,
 				ECF3A6E11DE7906B0034885C /* Classes */,
@@ -447,6 +450,7 @@
 				EC617A0A1DF0B36000AB21F9 /* listeType-32.png in Resources */,
 				EC6179D91DF0B35000AB21F9 /* type-04.png in Resources */,
 				EC6179E51DF0B35000AB21F9 /* type-16.png in Resources */,
+				EC617A471DF0E1AC00AB21F9 /* masque.png in Resources */,
 				EC617A0D1DF0B36000AB21F9 /* listeType-35.png in Resources */,
 				EC6179E81DF0B35000AB21F9 /* type-19.png in Resources */,
 				EC617A0E1DF0B36000AB21F9 /* listeType-36.png in Resources */,
@@ -459,6 +463,7 @@
 				EC617A041DF0B36000AB21F9 /* listeType-26.png in Resources */,
 				EC617A2F1DF0B36800AB21F9 /* typesPage-48.png in Resources */,
 				EC6179D71DF0B35000AB21F9 /* type-02.png in Resources */,
+				EC617A441DF0CBA700AB21F9 /* fonty.TXT in Resources */,
 				EC6179D81DF0B35000AB21F9 /* type-03.png in Resources */,
 				EC617A391DF0B36800AB21F9 /* typesPage-58.png in Resources */,
 				EC6179DA1DF0B35000AB21F9 /* type-05.png in Resources */,
@@ -466,6 +471,7 @@
 				EC617A311DF0B36800AB21F9 /* typesPage-50.png in Resources */,
 				EC617A281DF0B36800AB21F9 /* typesPage-41.png in Resources */,
 				EC6179BA1DF0B34700AB21F9 /* interface-06.png in Resources */,
+				EC617A451DF0CBA700AB21F9 /* MISTV___.TTF in Resources */,
 				EC617A321DF0B36800AB21F9 /* typesPage-51.png in Resources */,
 				EC6179BE1DF0B34700AB21F9 /* interface-10.png in Resources */,
 				EC617A351DF0B36800AB21F9 /* typesPage-54.png in Resources */,
@@ -473,9 +479,7 @@
 				EC617A051DF0B36000AB21F9 /* listeType-27.png in Resources */,
 				EC6179DE1DF0B35000AB21F9 /* type-09.png in Resources */,
 				EC617A061DF0B36000AB21F9 /* listeType-28.png in Resources */,
-				EC617A401DF0C85F00AB21F9 /* info.txt in Resources */,
 				EC6179DD1DF0B35000AB21F9 /* type-08.png in Resources */,
-				EC617A3F1DF0C85F00AB21F9 /* BASIF___.TTF in Resources */,
 				EC6179E01DF0B35000AB21F9 /* type-11.png in Resources */,
 				EC6179E61DF0B35000AB21F9 /* type-17.png in Resources */,
 				EC617A341DF0B36800AB21F9 /* typesPage-53.png in Resources */,
