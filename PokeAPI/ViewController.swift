@@ -16,10 +16,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     let limit = 1000
     
     @IBOutlet weak var monTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Voir tester silouette
+        /*//http://stackoverflow.com/questions/32538700/outline-path-of-a-image-silhouette-in-swift
+        */
         let UrlPokemon = "https://pokeapi.co/api/v2/pokemon/?limit=\(limit)"
         let DepartUrl = URL(string: UrlPokemon)!
         getPokemonListFromUrl(leUrl: DepartUrl)

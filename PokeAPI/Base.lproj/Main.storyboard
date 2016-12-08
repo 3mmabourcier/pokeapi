@@ -226,7 +226,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pUU-qu-gXz" customClass="TypeCollectionViewCell" customModule="PokeAPI" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="type" id="pUU-qu-gXz" customClass="TypeCollectionViewCell" customModule="PokeAPI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -246,7 +246,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="IND-KZ-mcT" id="PVK-ru-j30"/>
+                                    <outlet property="dataSource" destination="IND-KZ-mcT" id="iTX-sM-v4q"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -288,10 +288,6 @@
                                 <frame key="frameInset" minX="49.55%" minY="164" width="154" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="qrd-tl-K8i">
-                                <frame key="frameInset" minX="50.15%" minY="361" width="42" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-10.png" translatesAutoresizingMaskIntoConstraints="NO" id="DP7-AX-8XN">
                                 <frame key="frameInset" minX="66.24%" minY="371" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -314,6 +310,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeTxt.png" translatesAutoresizingMaskIntoConstraints="NO" id="69U-sh-xI1">
                                 <frame key="frameInset" minX="33" minY="324" width="301" height="538"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="qrd-tl-K8i">
+                                <frame key="frameInset" minX="50.15%" minY="361" width="42" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>

@@ -101,6 +101,8 @@
 		EC617A441DF0CBA700AB21F9 /* fonty.TXT in Resources */ = {isa = PBXBuildFile; fileRef = EC617A421DF0CBA700AB21F9 /* fonty.TXT */; };
 		EC617A451DF0CBA700AB21F9 /* MISTV___.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EC617A431DF0CBA700AB21F9 /* MISTV___.TTF */; };
 		EC617A471DF0E1AC00AB21F9 /* masque.png in Resources */ = {isa = PBXBuildFile; fileRef = EC617A461DF0E1AC00AB21F9 /* masque.png */; };
+		ECE2E8021DFA1B2E00748E9B /* 001Bulbasaur.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE2E8011DFA1B2E00748E9B /* 001Bulbasaur.png */; };
+		ECE2E8041DFA1F6100748E9B /* silouette.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE2E8031DFA1F6100748E9B /* silouette.png */; };
 		ECF3A6CF1DE775FF0034885C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3A6CE1DE775FF0034885C /* AppDelegate.swift */; };
 		ECF3A6D41DE775FF0034885C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF3A6D21DE775FF0034885C /* Main.storyboard */; };
 		ECF3A6D61DE775FF0034885C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF3A6D51DE775FF0034885C /* Assets.xcassets */; };
@@ -202,6 +204,8 @@
 		EC617A421DF0CBA700AB21F9 /* fonty.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fonty.TXT; sourceTree = "<group>"; };
 		EC617A431DF0CBA700AB21F9 /* MISTV___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MISTV___.TTF"; sourceTree = "<group>"; };
 		EC617A461DF0E1AC00AB21F9 /* masque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = masque.png; sourceTree = "<group>"; };
+		ECE2E8011DFA1B2E00748E9B /* 001Bulbasaur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001Bulbasaur.png; sourceTree = "<group>"; };
+		ECE2E8031DFA1F6100748E9B /* silouette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silouette.png; sourceTree = "<group>"; };
 		ECF3A6CB1DE775FF0034885C /* PokeAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF3A6CE1DE775FF0034885C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF3A6D31DE775FF0034885C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 		ECF3A6E41DE798290034885C /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				ECE2E8031DFA1F6100748E9B /* silouette.png */,
+				ECE2E8011DFA1B2E00748E9B /* 001Bulbasaur.png */,
 				ECF3A6E51DE798380034885C /* 1.png */,
 			);
 			name = Test;
@@ -540,6 +546,7 @@
 				EC2BF5501DFA0C91005D37DA /* typesPage-steel.png in Resources */,
 				EC2BF4E31DF9F8CF005D37DA /* type-ice.png in Resources */,
 				EC2BF5491DFA0C91005D37DA /* typesPage-fighting.png in Resources */,
+				ECE2E8041DFA1F6100748E9B /* silouette.png in Resources */,
 				EC2BF52E1DFA0BDE005D37DA /* listeType-ice.png in Resources */,
 				EC2BF4DC1DF9F8CF005D37DA /* type-ghost.png in Resources */,
 				EC2BF5561DFA0C91005D37DA /* typesPage-ice.png in Resources */,
@@ -589,6 +596,7 @@
 				EC2BF52D1DFA0BDE005D37DA /* listeType-psychic.png in Resources */,
 				ECF3A6D41DE775FF0034885C /* Main.storyboard in Resources */,
 				EC2BF5241DFA0BDE005D37DA /* listeType-ground.png in Resources */,
+				ECE2E8021DFA1B2E00748E9B /* 001Bulbasaur.png in Resources */,
 				EC2BF5481DFA0C91005D37DA /* typesPage-normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

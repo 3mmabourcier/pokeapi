@@ -9,13 +9,13 @@
 import UIKit
 
 class listeTypeViewController: UIViewController, UICollectionViewDataSource{
-
+    
     var typeList = Array<Dictionary<String, String>>()
     @IBOutlet weak var leCollView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         print("les types load")
         let UrlType = "https://pokeapi.co/api/v2/type"
         let DepartUrl = URL(string: UrlType)!
@@ -23,12 +23,12 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource{
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- 
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("le count \(typeList.count)")
         return typeList.count
@@ -42,7 +42,7 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource{
         uneCell.bt.setBackgroundImage(image, for: .normal )
         return uneCell
     }
-
+    
     func getTypeListFromUrl(leUrl : URL) {
         /// DispatchQueue.main.async ( execute: {
         if let _données = NSData(contentsOf: leUrl) as? Data {
@@ -65,13 +65,13 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource{
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
