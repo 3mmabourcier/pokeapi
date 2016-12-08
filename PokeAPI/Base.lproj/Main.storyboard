@@ -236,7 +236,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-69-NE0">
                                                     <frame key="frameInset" minX="4" minY="4" width="90" height="89"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" backgroundImage="type-10.png"/>
+                                                    <state key="normal" backgroundImage="type-dragon.png"/>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -281,11 +281,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-08.png" translatesAutoresizingMaskIntoConstraints="NO" id="MIM-J7-JbH">
-                                <frame key="frameInset" minX="49.70%" minY="151" width="206" height="179"/>
+                                <frame key="frameInset" minX="49.41%" minY="151" width="206" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qkk-sW-eZ5">
-                                <frame key="frameInset" minX="49.77%" minY="164" width="154" height="152"/>
+                                <frame key="frameInset" minX="49.55%" minY="164" width="154" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="qrd-tl-K8i">
@@ -293,7 +293,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-10.png" translatesAutoresizingMaskIntoConstraints="NO" id="DP7-AX-8XN">
-                                <frame key="frameInset" minX="66.38%" minY="371" width="24" height="21"/>
+                                <frame key="frameInset" minX="66.24%" minY="371" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-09.png" translatesAutoresizingMaskIntoConstraints="NO" id="Djd-P3-Ymw">
@@ -359,7 +359,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enx-qF-rHm">
-                                <frame key="frameInset" minX="49.79%" minY="148" width="132" height="148"/>
+                                <frame key="frameInset" minX="49.59%" minY="148" width="132" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-MR-fHs">
@@ -371,7 +371,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-09.png" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-cW-ZaW">
-                                <frame key="frameInset" minX="33.33%" minY="323" width="24" height="21"/>
+                                <frame key="frameInset" minX="33.19%" minY="323" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-WL-Zih">
@@ -408,7 +408,7 @@
         <image name="pagePokeTxt.png" width="750" height="1334"/>
         <image name="pageTypesSection.png" width="750" height="1334"/>
         <image name="titre_v2.png" width="1188" height="283"/>
-        <image name="type-10.png" width="333" height="353"/>
+        <image name="type-dragon.png" width="333" height="353"/>
         <image name="typesPage-50.png" width="314" height="313"/>
     </resources>
     <inferredMetricsTieBreakers>
