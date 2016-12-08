@@ -10,16 +10,18 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
     var pokemonUrlList = Array<Dictionary<String, String>>()
-    var pokemonList = Array<Dictionary<String, Any>>()
-    var pokemonImgList = Array<UIImage>()
+    var pokemonList = Dictionary<String,Dictionary<String, Any>>()
+    var pokemonImgList = Dictionary<String,UIImage>()
+    var capturedList = Dictionary<String,Bool>()
     let limit = 1000
+    
+    @IBOutlet weak var monTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let UrlPokemon = "https://pokeapi.co/api/v2/pokemon/?limit=\(limit)"
         let DepartUrl = URL(string: UrlPokemon)!
-        
-        
         getPokemonListFromUrl(leUrl: DepartUrl)
         
         //print(pokemonUrlList)
@@ -34,92 +36,106 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         
-        let _id = indexPath.row
+        let _id = pokemonUrlList[indexPath.row]["name"]! as String
         var uneCell:PokemonTableViewCell
-        uneCell = tableView.dequeueReusableCell(withIdentifier: "Pokemon") as! PokemonTableViewCell
-        //RECHERCHE DES INFO
-        if(!self.pokemonList.indices.contains(_id)){
-            self.pokemonList.append(Dictionary<String, Any>())
-            if let _url = self.pokemonUrlList[_id]["url"] as String! {
-                //TODO:
-                DispatchQueue.global().async {
-                    self.getPokemonFromUrl(leUrl: URL(string: _url)!)
-            
-                }
+        if let _cap = capturedList[_id] as Bool!{
+            if (_cap){
+                uneCell = tableView.dequeueReusableCell(withIdentifier: "PokemonCapture") as! PokemonTableViewCell
+                print("Captured 1 \(capturedList[_id])")
+            }else{
+                uneCell = tableView.dequeueReusableCell(withIdentifier: "Pokemon") as! PokemonTableViewCell
+                
             }
         }else{
-        //AFFICHE LES INFO
+            capturedList[_id] = false
+            uneCell = tableView.dequeueReusableCell(withIdentifier: "Pokemon") as! PokemonTableViewCell
+        }
+
         
-            if let _nom = pokemonList[_id]["name"] as? String {
-                uneCell.champNom.text = _nom
-            }else{
-                uneCell.champNom.text = "Loading"
-            }
-            if let _id = pokemonList[_id]["id"] as? Int {
-                if(_id<10000){
-                    uneCell.champId.text = "\(_id)"
-                }
-            }else{
-                uneCell.champId.text = "???"
-            }
-            if(!pokemonImgList.indices.contains(_id)){
-            pokemonImgList.append(UIImage())
-            if let _liens = pokemonList[_id]["sprites"] as? Dictionary<String,String> {
-                if let _lien = _liens["front_default"] as String!{
-                    let _url = URL(string: _lien)
-                    print("Recherche Image\(_id) \(_url)")
-                        DispatchQueue.global().async {
-                            if let _data = NSData(contentsOf: _url!) as? Data {
-                                let _img = UIImage(data: _data)
-                                self.pokemonImgList[_id] = _img!
-                                uneCell.img.image = _img
-                                
-                            }
-                        }
-                    }
-                }else{
-                    uneCell.img.image = UIImage(named: "1,png")
-                }
-            }else{
-                uneCell.img.image = self.pokemonImgList[_id]
-                print("Image\(_id) placé")
-            }
-        }
-        return uneCell
-    }
-    
-////COLLECTION VIEW DÉBUT
-   /* func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let uneCell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokemon", for:indexPath) as! PokemonCollectionViewCell
-     
-        let _id = indexPath[1];
-        if(!pokemonList.indices.contains(_id)){
-            pokemonList.append(Dictionary<String, Any>())
-            if let _url = pokemonUrlList[_id]["url"] as String! {
-                //TODO:
-                DispatchQueue.main.async{
-                
-                    self.getPokemonFromUrl(leUrl: URL(string: _url)!)
-                   // print(self.pokemonList[_id])
-                    self.appliquerInfoCell(laCell: self.leCellAChanger, id: _id)
-                }
-                
-            
-            
-                //print(pokemonList)
-            }
+        if let lePokemon = self.pokemonList[_id]{
+            afficherLesInfos(lesInfos: lePokemon, laCellulle: uneCell, leId: _id)
+            self.afficherLesImages(lesInfos: (self.pokemonList[_id])!, laCellulle: uneCell, lesImg: self.pokemonImgList, leId: _id)
         }else{
-            appliquerInfoCell(laCell : uneCell, id: _id)
-            
+            //RECHERCHE DES INFO
+            if let _url = self.pokemonUrlList[indexPath.row]["url"] as String! {
+                //TODO:
+                afficherLoading(laCellulle: uneCell)
+                DispatchQueue.global().async {
+                    self.getPokemonFromUrl(leUrl: URL(string: _url)!, idPath:indexPath)
+                 
+                }
+                //self.afficherLesInfos(lesInfos: (pokemonList[_id])!, laCellulle: uneCell, leId: _id)
+                //self.afficherLesImages(lesInfos: pokemonList[_id], laCellulle: uneCell, lesImg: pokemonImgList, leId: _id)
+            }
         }
-      
         return uneCell
+        
     }
-    */
+    func afficherLoading(laCellulle:PokemonTableViewCell){
+        //AFFICHE LES INFO
+        laCellulle.champNom.text = "Loading"
+        laCellulle.champId.text = "???"
+        laCellulle.img.image = UIImage(named: "loading.gif")
+        laCellulle.bgType.image = UIImage(named: "listeType-unknown.png")
+        
+    }
+
+    func afficherLesInfos(lesInfos:Dictionary<String,Any>, laCellulle:PokemonTableViewCell, leId:String){
+        //AFFICHE LES INFO
+        if let _nom = lesInfos["name"] as? String {
+            laCellulle.champNom.text = "\(_nom)"
+        }
+        if let _id = lesInfos["id"] as? Int {
+            if(_id<10000){
+                laCellulle.champId.text = "\(_id)"
+            }
+        }
+        
+        //////// CHANGER LES NOM DE TYPEPAGES-LETYPEpng
+        if let _lesTypes = lesInfos["types"] as? Array<Dictionary<String,Any>>{
+            for type in _lesTypes{
+                
+                let _leType = type["type"] as? Dictionary<String,String>
+                let _num = type["slot"] as? Int
+                if let _nomType = _leType?["name"] as String!{
+                    laCellulle.bgType.image = UIImage(named: "listeType-\(_nomType).png")
+                    if(_lesTypes.count>=2){
+                        if(_num==1){
+                            //laCellulle.type1.image = maskImage(image: UIImage(named: "typesPage-\(_nomType).png")!, mask: UIImage(named: "masque.png")!)
+                        }else{
+                            //laCellulle.type2.image = UIImage(named:"typesPage-\(_nomType).png")
+                        }
+                    }else{
+                        //laCellulle.type1.image = UIImage(named:"typesPage-\(_nomType).png")
+                    }
+                    
+                }
+                
+            }
+        }
+        
+        }
+
+    func afficherLesImages(lesInfos:Dictionary<String,Any>,laCellulle:PokemonTableViewCell, lesImg:Dictionary<String,UIImage>, leId:String){
+        if let uneIMG = lesImg[leId]{
+            laCellulle.img.image = uneIMG
+        }else{
+            if let _liens = lesInfos["sprites"] as? Dictionary<String,Any> {
+                print("Liens trouvé")
+                laCellulle.img.image = UIImage(named: "1.png")
+                if let _lien = _liens["front_default"] as! String!{
+                    let _url = URL(string: _lien)
+                        if let _data = NSData(contentsOf: _url!) as? Data {
+                            let _img = UIImage(data: _data)
+                            self.pokemonImgList[leId] = _img!
+                            laCellulle.img.image = _img
+                        }
+                }
+            }else{
+                laCellulle.img.image = UIImage(named: "1.png")
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -148,20 +164,16 @@ class ViewController: UIViewController, UITableViewDataSource {
         /// }) // DispatchQueue.main.async
     }
     
-    func getPokemonFromUrl(leUrl : URL) {
+    func getPokemonFromUrl(leUrl : URL, idPath: IndexPath) {
         if let _données = NSData(contentsOf: leUrl) as? Data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: _données, options: JSONSerialization.ReadingOptions()) as? Dictionary<String, Any>
-                
                     
-
-                    let id = json?["id"] as! Int
-                
+                    let id = json?["name"] as! String
                     print("Conversion JSON du \(id)")
-                    self.pokemonList[id-1] = ( json as Dictionary<String, Any>!)
-                    
-                    print(self.pokemonList[id-1]["id"])
-                 //   print(self.pokemonList[id] = ( json as Dictionary<String, Any>!))
+                    self.pokemonList[id] = ( json as Dictionary<String, Any>!)
+                    self.monTableView.reloadRows(at: [idPath], with: UITableViewRowAnimation(rawValue: 1)!)
+                 //   print(self.pokemonList[id] as Dictionary<String, Any>!))
                 
                 } catch {
                     print("\n\n#Erreur: Problème de conversion json:\(error)\n\n")
@@ -170,6 +182,25 @@ class ViewController: UIViewController, UITableViewDataSource {
             {
                 print("\n\n#Erreur: impossible de lire les données via:\(leUrl.absoluteString)\n\n")
             } // if let _données = NSData
+    }
+    
+    func maskImage(image:UIImage, mask:(UIImage))->UIImage{
+        
+        let imageReference = image.cgImage
+        let maskReference = mask.cgImage
+        
+        let imageMask = CGImage(maskWidth: maskReference!.width,
+                                height: maskReference!.height,
+                                bitsPerComponent: maskReference!.bitsPerComponent,
+                                bitsPerPixel: maskReference!.bitsPerPixel,
+                                bytesPerRow: maskReference!.bytesPerRow,
+                                provider: maskReference!.dataProvider!, decode: nil, shouldInterpolate: true)
+        
+        let maskedReference = imageReference!.masking(imageMask!)
+        
+        let maskedImage = UIImage(cgImage:maskedReference!)
+        
+        return maskedImage
     }
 
 }

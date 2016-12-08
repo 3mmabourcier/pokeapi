@@ -90,10 +90,6 @@
                                                     <frame key="frameInset" width="110" height="79"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-05.png" translatesAutoresizingMaskIntoConstraints="NO" id="qJb-cd-Xcn">
-                                                    <frame key="frameInset" minX="89" minY="47" width="31" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="???" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQO-bo-PJu">
                                                     <frame key="frameInset" minX="128" minY="49" width="239" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -105,39 +101,44 @@
                                         </tableViewCellContentView>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="0.0" right="8"/>
                                         <connections>
+                                            <outlet property="bgType" destination="oYJ-Yg-7du" id="3Rg-sh-dyf"/>
                                             <outlet property="champId" destination="AQO-bo-PJu" id="akI-gP-Avk"/>
                                             <outlet property="champNom" destination="JaM-Jo-6fR" id="NSV-dI-XvF"/>
                                             <outlet property="img" destination="o6a-6v-nPh" id="DyA-mJ-8HJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="2fP-AP-DPN">
-                                        <rect key="frame" x="0.0" y="112" width="375" height="83"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonCapture" rowHeight="84" id="Rqp-UJ-6Z0" customClass="PokemonTableViewCell" customModule="PokeAPI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="112" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2fP-AP-DPN" id="VB5-Zf-iJ3">
-                                            <frame key="frameInset" width="375" height="82"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rqp-UJ-6Z0" id="Smg-KW-lsr">
+                                            <frame key="frameInset" width="375" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="listeType-38.png" translatesAutoresizingMaskIntoConstraints="NO" id="fuB-pP-uO3">
-                                                    <frame key="frameInset" minY="1" width="288" height="73"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="listeType-32.png" translatesAutoresizingMaskIntoConstraints="NO" id="GmU-Dd-gTe">
+                                                    <frame key="frameInset" width="286" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPP-au-sCE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozv-hu-Oec">
                                                     <frame key="frameInset" minX="126" minY="8" width="241" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Ru-pu-nCQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="vdX-uZ-3kx">
                                                     <frame key="frameInset" minX="8" minY="8" width="96" height="62"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-11.png" translatesAutoresizingMaskIntoConstraints="NO" id="qOv-PV-bbE">
-                                                    <frame key="frameInset" minY="2" width="110" height="79"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-11.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rei-hy-aet">
+                                                    <frame key="frameInset" width="110" height="79"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="???" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-bH-I0f">
-                                                    <frame key="frameInset" minX="127" minY="48" width="239" height="26"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-05.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Ud-wx-ROR">
+                                                    <frame key="frameInset" minX="89" minY="47" width="31" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="???" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvY-H0-Z1r">
+                                                    <frame key="frameInset" minX="128" minY="49" width="239" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -145,6 +146,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="0.0" right="8"/>
+                                        <connections>
+                                            <outlet property="bgType" destination="GmU-Dd-gTe" id="CzU-9A-1js"/>
+                                            <outlet property="capture" destination="5Ud-wx-ROR" id="rag-HH-G6W"/>
+                                            <outlet property="champId" destination="CvY-H0-Z1r" id="u3f-6g-Pk3"/>
+                                            <outlet property="champNom" destination="ozv-hu-Oec" id="n0s-NZ-mdr"/>
+                                            <outlet property="img" destination="vdX-uZ-3kx" id="ZBi-mr-nNN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -163,15 +172,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="monTableView" destination="5re-zH-wQP" id="Awb-UD-Njj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="41.829085457271368"/>
         </scene>
-        <!--View Controller-->
+        <!--Liste Type View Controller-->
         <scene sceneID="Ykn-tJ-CEh">
             <objects>
-                <viewController id="IND-KZ-mcT" sceneMemberID="viewController">
+                <viewController id="IND-KZ-mcT" customClass="listeTypeViewController" customModule="PokeAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mQ9-O4-oCY"/>
                         <viewControllerLayoutGuide type="bottom" id="1eF-2m-qia"/>
@@ -214,7 +226,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pUU-qu-gXz">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pUU-qu-gXz" customClass="TypeCollectionViewCell" customModule="PokeAPI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -228,12 +240,21 @@
                                                 </button>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="bt" destination="h0D-69-NE0" id="hmQ-lK-dx0"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="IND-KZ-mcT" id="PVK-ru-j30"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="leCollView" destination="W8g-JF-S2p" id="0RO-dx-XMn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mq5-hd-khq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -383,7 +404,6 @@
         <image name="interface-14.png" width="339" height="158"/>
         <image name="launchScreen.jpg" width="750" height="1334"/>
         <image name="listeType-32.png" width="858" height="241"/>
-        <image name="listeType-38.png" width="858" height="241"/>
         <image name="pagePokeSection.png" width="750" height="1334"/>
         <image name="pagePokeTxt.png" width="750" height="1334"/>
         <image name="pageTypesSection.png" width="750" height="1334"/>
@@ -392,6 +412,6 @@
         <image name="typesPage-50.png" width="314" height="313"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ar-GD-qea"/>
+        <segue reference="ff9-do-IA8"/>
     </inferredMetricsTieBreakers>
 </document>

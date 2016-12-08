@@ -13,5 +13,9 @@ class PokemonTableViewCell: UITableViewCell {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var champNom: UILabel!
     @IBOutlet weak var champId: UILabel!
+    @IBOutlet weak var bgType: UIImageView!
+    @IBOutlet weak var capture: UIImageView!
+    //@IBOutlet weak var type1: UIImageView!
+    //@IBOutlet weak var type2: UIImageView!
     
 }
