@@ -114,7 +114,7 @@
                                             <frame key="frameInset" width="375" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="listeType-32.png" translatesAutoresizingMaskIntoConstraints="NO" id="GmU-Dd-gTe">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="listeType-dragon.png" translatesAutoresizingMaskIntoConstraints="NO" id="GmU-Dd-gTe">
                                                     <frame key="frameInset" width="286" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -371,7 +371,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-09.png" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-cW-ZaW">
-                                <frame key="frameInset" minX="33.19%" minY="323" width="24" height="21"/>
+                                <frame key="frameInset" minX="33.05%" minY="323" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-WL-Zih">
@@ -403,8 +403,8 @@
         <image name="interface-11.png" width="794" height="515"/>
         <image name="interface-14.png" width="339" height="158"/>
         <image name="launchScreen.jpg" width="750" height="1334"/>
-        <image name="listeType-32.png" width="858" height="241"/>
         <image name="listeType-dark.png" width="858" height="241"/>
+        <image name="listeType-dragon.png" width="858" height="241"/>
         <image name="pagePokeSection.png" width="750" height="1334"/>
         <image name="pagePokeTxt.png" width="750" height="1334"/>
         <image name="pageTypesSection.png" width="750" height="1334"/>
