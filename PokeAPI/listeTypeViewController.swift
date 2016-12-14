@@ -8,10 +8,26 @@
 
 import UIKit
 
+protocol TypeViewDelegate: class {
+    func returnTypeUrl(info: String)
+}
+
 class listeTypeViewController: UIViewController, UICollectionViewDataSource{
+
     
     var typeList = Array<Dictionary<String, String>>()
     @IBOutlet weak var leCollView: UICollectionView!
+    
+    weak var delegate: TypeViewDelegate? = nil
+    
+    @IBAction func chooseType(sender: AnyObject) {
+        
+        // call this method on whichever class implements our delegate protocol
+        delegate?.returnTypeUrl(info: typeList[sender.row]["url"]!)
+        
+        // go back to the previous view controller
+        _ = self.navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +58,7 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource{
         uneCell.bt.setBackgroundImage(image, for: .normal )
         return uneCell
     }
+    
     
     func getTypeListFromUrl(leUrl : URL) {
         /// DispatchQueue.main.async ( execute: {

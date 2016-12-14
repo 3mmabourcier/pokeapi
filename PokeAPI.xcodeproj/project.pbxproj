@@ -88,6 +88,7 @@
 		EC2BF5591DFA0C91005D37DA /* typesPage-fairy.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF5451DFA0C91005D37DA /* typesPage-fairy.png */; };
 		EC2BF55A1DFA0C91005D37DA /* typesPage-unkown.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF5461DFA0C91005D37DA /* typesPage-unkown.png */; };
 		EC2BF55B1DFA0C91005D37DA /* typesPage-shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF5471DFA0C91005D37DA /* typesPage-shadow.png */; };
+		EC5EBA261E01F2B700FED6B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5EBA241E01F2B700FED6B3 /* Main.storyboard */; };
 		EC6179B51DF0B34700AB21F9 /* interface-01.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6179A91DF0B34700AB21F9 /* interface-01.png */; };
 		EC6179B61DF0B34700AB21F9 /* interface-02.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6179AA1DF0B34700AB21F9 /* interface-02.png */; };
 		EC6179B71DF0B34700AB21F9 /* interface-03.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6179AB1DF0B34700AB21F9 /* interface-03.png */; };
@@ -104,7 +105,6 @@
 		ECE2E8021DFA1B2E00748E9B /* 001Bulbasaur.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE2E8011DFA1B2E00748E9B /* 001Bulbasaur.png */; };
 		ECE2E8041DFA1F6100748E9B /* silouette.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE2E8031DFA1F6100748E9B /* silouette.png */; };
 		ECF3A6CF1DE775FF0034885C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3A6CE1DE775FF0034885C /* AppDelegate.swift */; };
-		ECF3A6D41DE775FF0034885C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF3A6D21DE775FF0034885C /* Main.storyboard */; };
 		ECF3A6D61DE775FF0034885C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF3A6D51DE775FF0034885C /* Assets.xcassets */; };
 		ECF3A6E61DE798380034885C /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3A6E51DE798380034885C /* 1.png */; };
 /* End PBXBuildFile section */
@@ -191,6 +191,7 @@
 		EC2BF5451DFA0C91005D37DA /* typesPage-fairy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-fairy.png"; sourceTree = "<group>"; };
 		EC2BF5461DFA0C91005D37DA /* typesPage-unkown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-unkown.png"; sourceTree = "<group>"; };
 		EC2BF5471DFA0C91005D37DA /* typesPage-shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-shadow.png"; sourceTree = "<group>"; };
+		EC5EBA251E01F2B700FED6B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC6179A91DF0B34700AB21F9 /* interface-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "interface-01.png"; sourceTree = "<group>"; };
 		EC6179AA1DF0B34700AB21F9 /* interface-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "interface-02.png"; sourceTree = "<group>"; };
 		EC6179AB1DF0B34700AB21F9 /* interface-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "interface-03.png"; sourceTree = "<group>"; };
@@ -208,7 +209,6 @@
 		ECE2E8031DFA1F6100748E9B /* silouette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silouette.png; sourceTree = "<group>"; };
 		ECF3A6CB1DE775FF0034885C /* PokeAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF3A6CE1DE775FF0034885C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECF3A6D31DE775FF0034885C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECF3A6D51DE775FF0034885C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECF3A6DA1DE775FF0034885C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECF3A6E51DE798380034885C /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 				ECF3A6CE1DE775FF0034885C /* AppDelegate.swift */,
 				EC2BF5041DFA0A81005D37DA /* ViewController.swift */,
 				EC2BF4F21DF9FA15005D37DA /* Intro.swift */,
-				ECF3A6D21DE775FF0034885C /* Main.storyboard */,
+				EC5EBA241E01F2B700FED6B3 /* Main.storyboard */,
 				ECF3A6D51DE775FF0034885C /* Assets.xcassets */,
 				EC2BF4BD1DF9F4BB005D37DA /* Launch Screen.storyboard */,
 				ECF3A6DA1DE775FF0034885C /* Info.plist */,
@@ -519,6 +519,7 @@
 				ECF3A6D61DE775FF0034885C /* Assets.xcassets in Resources */,
 				EC2BF4E81DF9F8CF005D37DA /* type-shadow.png in Resources */,
 				EC2BF5291DFA0BDE005D37DA /* listeType-fire.png in Resources */,
+				EC5EBA261E01F2B700FED6B3 /* Main.storyboard in Resources */,
 				EC2BF4E91DF9F8CF005D37DA /* type-none.png in Resources */,
 				EC2BF4D81DF9F8CF005D37DA /* type-poison.png in Resources */,
 				EC2BF54E1DFA0C91005D37DA /* typesPage-bug.png in Resources */,
@@ -594,7 +595,6 @@
 				EC6179C01DF0B34700AB21F9 /* interface-12.png in Resources */,
 				EC2BF4F71DFA007D005D37DA /* titre_v2.png in Resources */,
 				EC2BF52D1DFA0BDE005D37DA /* listeType-psychic.png in Resources */,
-				ECF3A6D41DE775FF0034885C /* Main.storyboard in Resources */,
 				EC2BF5241DFA0BDE005D37DA /* listeType-ground.png in Resources */,
 				ECE2E8021DFA1B2E00748E9B /* 001Bulbasaur.png in Resources */,
 				EC2BF5481DFA0C91005D37DA /* typesPage-normal.png in Resources */,
@@ -620,10 +620,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ECF3A6D21DE775FF0034885C /* Main.storyboard */ = {
+		EC5EBA241E01F2B700FED6B3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ECF3A6D31DE775FF0034885C /* Base */,
+				EC5EBA251E01F2B700FED6B3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -55,7 +55,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="interface-04.png"/>
                                 <connections>
-                                    <segue destination="IND-KZ-mcT" kind="presentation" modalPresentationStyle="pageSheet" modalTransitionStyle="flipHorizontal" id="Nej-jL-XRL"/>
+                                    <action selector="goToType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XoY-j7-m29"/>
+                                    <segue destination="IND-KZ-mcT" kind="presentation" id="M6A-7a-hQe"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5re-zH-wQP">
@@ -168,11 +169,15 @@
                                 <frame key="frameInset" minX="125" minY="624" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="interface-14.png"/>
+                                <connections>
+                                    <action selector="rechercheCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HeX-Te-KOM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="btCapture" destination="e5H-Tg-9fI" id="PYw-cJ-LMc"/>
                         <outlet property="monTableView" destination="5re-zH-wQP" id="Awb-UD-Njj"/>
                     </connections>
                 </viewController>
@@ -212,7 +217,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="interface-01.png"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="pageSheet" modalTransitionStyle="flipHorizontal" id="ff9-do-IA8"/>
+                                    <action selector="retour:" destination="IND-KZ-mcT" eventType="touchUpInside" id="RDf-Fq-XDK"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W8g-JF-S2p">
@@ -237,11 +242,15 @@
                                                     <frame key="frameInset" minX="4" minY="4" width="90" height="89"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" backgroundImage="type-dragon.png"/>
+                                                    <connections>
+                                                        <action selector="btType:" destination="IND-KZ-mcT" eventType="touchUpInside" id="ILG-JX-d2j"/>
+                                                        <action selector="chooseTypeWithSender:" destination="IND-KZ-mcT" eventType="touchUpInside" id="w9K-dp-JmL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
                                         <connections>
-                                            <outlet property="bt" destination="h0D-69-NE0" id="hmQ-lK-dx0"/>
+                                            <outlet property="bt" destination="h0D-69-NE0" id="Qhh-ji-5w1"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -258,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mq5-hd-khq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864.79999999999995" y="-255.02248875562222"/>
+            <point key="canvasLocation" x="831" y="-245"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="i9k-K8-jWR">
@@ -281,15 +290,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-08.png" translatesAutoresizingMaskIntoConstraints="NO" id="MIM-J7-JbH">
-                                <frame key="frameInset" minX="49.41%" minY="151" width="206" height="179"/>
+                                <frame key="frameInset" minX="48.52%" minY="151" width="206" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qkk-sW-eZ5">
-                                <frame key="frameInset" minX="49.55%" minY="164" width="154" height="152"/>
+                                <frame key="frameInset" minX="49.32%" minY="164" width="154" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-10.png" translatesAutoresizingMaskIntoConstraints="NO" id="DP7-AX-8XN">
-                                <frame key="frameInset" minX="66.24%" minY="371" width="24" height="21"/>
+                                <frame key="frameInset" minX="66.10%" minY="371" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-09.png" translatesAutoresizingMaskIntoConstraints="NO" id="Djd-P3-Ymw">
@@ -359,7 +368,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enx-qF-rHm">
-                                <frame key="frameInset" minX="49.59%" minY="148" width="132" height="148"/>
+                                <frame key="frameInset" minX="48.97%" minY="148" width="132" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-MR-fHs">
@@ -412,7 +421,4 @@
         <image name="type-dragon.png" width="333" height="353"/>
         <image name="typesPage-50.png" width="314" height="313"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ff9-do-IA8"/>
-    </inferredMetricsTieBreakers>
 </document>
