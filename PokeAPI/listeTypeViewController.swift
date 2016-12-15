@@ -10,7 +10,7 @@ import UIKit
 
 protocol typeChoisiDelegate{
     func envoieDuType(info:String)
-}
+}//typeChoisiDelegate
 
 class listeTypeViewController: UIViewController, UICollectionViewDataSource {
 
