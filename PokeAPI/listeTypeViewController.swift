@@ -8,26 +8,17 @@
 
 import UIKit
 
-protocol TypeViewDelegate: class {
-    func returnTypeUrl(info: String)
+protocol typeChoisiDelegate{
+    func envoieDuType(info:String)
 }
 
-class listeTypeViewController: UIViewController, UICollectionViewDataSource{
+class listeTypeViewController: UIViewController, UICollectionViewDataSource {
 
+    var delegate:typeChoisiDelegate? = nil
     
     var typeList = Array<Dictionary<String, String>>()
     @IBOutlet weak var leCollView: UICollectionView!
     
-    weak var delegate: TypeViewDelegate? = nil
-    
-    @IBAction func chooseType(sender: AnyObject) {
-        
-        // call this method on whichever class implements our delegate protocol
-        delegate?.returnTypeUrl(info: typeList[sender.row]["url"]!)
-        
-        // go back to the previous view controller
-        _ = self.navigationController?.popViewController(animated: true)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +26,33 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource{
         print("les types load")
         let UrlType = "https://pokeapi.co/api/v2/type"
         let DepartUrl = URL(string: UrlType)!
-        getTypeListFromUrl(leUrl: DepartUrl)
+        if typeList.isEmpty{
+            getTypeListFromUrl(leUrl: DepartUrl)
+        }else{
+            leCollView.reloadData()
+        }
         
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func sendType(_ sender: AnyObject) {
+
+        var indexPath: IndexPath!
+        if let button = sender as? UIButton {
+            if let superview = button.superview {
+                if let cell = superview.superview as? TypeCollectionViewCell {
+                    indexPath = leCollView.indexPath(for: cell)
+                    //print("le url \(typeList[indexPath.row]["url"])")
+                    if (delegate != nil){
+                        if let information = typeList[indexPath.row]["url"]{
+                            delegate!.envoieDuType(info: information)
+                        }
+                    }
+                }
+            }
+        }
+        
+        self.dismiss(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,7 +83,7 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource{
                 
                 print("Reception Json des liens de type")
                 self.typeList = json?["results"] as! Array<Dictionary<String, String>>
-                leCollView.reloadData()
+                //leCollView.reloadData()
                 //return json!
             } catch {
                 print("\n\n#Erreur: Problème de conversion json:\(error)\n\n")
@@ -80,6 +95,7 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource{
         
         /// }) // DispatchQueue.main.async
     }
+    
     
     /*
      // MARK: - Navigation

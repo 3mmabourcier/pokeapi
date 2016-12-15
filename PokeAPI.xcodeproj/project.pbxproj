@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC01C0A61E0354C60019C4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC01C0A51E0354C60019C4EC /* Main.storyboard */; };
+		EC01C0A81E0358FB0019C4EC /* titre_v3.png in Resources */ = {isa = PBXBuildFile; fileRef = EC01C0A71E0358FB0019C4EC /* titre_v3.png */; };
+		EC01C0AB1E0359260019C4EC /* launchScreen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EC01C0A91E0359260019C4EC /* launchScreen_2.png */; };
+		EC01C0AC1E0359260019C4EC /* launchScreenFond.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC01C0AA1E0359260019C4EC /* launchScreenFond.jpg */; };
 		EC2BF4AE1DF9F485005D37DA /* backgroundPokemon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF4AB1DF9F485005D37DA /* backgroundPokemon.jpg */; };
 		EC2BF4AF1DF9F485005D37DA /* backgroundTypes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF4AC1DF9F485005D37DA /* backgroundTypes.jpg */; };
 		EC2BF4B01DF9F485005D37DA /* launchScreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF4AD1DF9F485005D37DA /* launchScreen.jpg */; };
@@ -88,7 +92,6 @@
 		EC2BF5591DFA0C91005D37DA /* typesPage-fairy.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF5451DFA0C91005D37DA /* typesPage-fairy.png */; };
 		EC2BF55A1DFA0C91005D37DA /* typesPage-unkown.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF5461DFA0C91005D37DA /* typesPage-unkown.png */; };
 		EC2BF55B1DFA0C91005D37DA /* typesPage-shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2BF5471DFA0C91005D37DA /* typesPage-shadow.png */; };
-		EC5EBA261E01F2B700FED6B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5EBA241E01F2B700FED6B3 /* Main.storyboard */; };
 		EC6179B51DF0B34700AB21F9 /* interface-01.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6179A91DF0B34700AB21F9 /* interface-01.png */; };
 		EC6179B61DF0B34700AB21F9 /* interface-02.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6179AA1DF0B34700AB21F9 /* interface-02.png */; };
 		EC6179B71DF0B34700AB21F9 /* interface-03.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6179AB1DF0B34700AB21F9 /* interface-03.png */; };
@@ -110,6 +113,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC01C0A41E0354C60019C4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC01C0A71E0358FB0019C4EC /* titre_v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titre_v3.png; sourceTree = "<group>"; };
+		EC01C0A91E0359260019C4EC /* launchScreen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen_2.png; sourceTree = "<group>"; };
+		EC01C0AA1E0359260019C4EC /* launchScreenFond.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launchScreenFond.jpg; sourceTree = "<group>"; };
 		EC2BF4AB1DF9F485005D37DA /* backgroundPokemon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundPokemon.jpg; sourceTree = "<group>"; };
 		EC2BF4AC1DF9F485005D37DA /* backgroundTypes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundTypes.jpg; sourceTree = "<group>"; };
 		EC2BF4AD1DF9F485005D37DA /* launchScreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launchScreen.jpg; sourceTree = "<group>"; };
@@ -191,7 +198,6 @@
 		EC2BF5451DFA0C91005D37DA /* typesPage-fairy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-fairy.png"; sourceTree = "<group>"; };
 		EC2BF5461DFA0C91005D37DA /* typesPage-unkown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-unkown.png"; sourceTree = "<group>"; };
 		EC2BF5471DFA0C91005D37DA /* typesPage-shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typesPage-shadow.png"; sourceTree = "<group>"; };
-		EC5EBA251E01F2B700FED6B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC6179A91DF0B34700AB21F9 /* interface-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "interface-01.png"; sourceTree = "<group>"; };
 		EC6179AA1DF0B34700AB21F9 /* interface-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "interface-02.png"; sourceTree = "<group>"; };
 		EC6179AB1DF0B34700AB21F9 /* interface-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "interface-03.png"; sourceTree = "<group>"; };
@@ -228,6 +234,8 @@
 		EC2BF4AA1DF9F485005D37DA /* lesBackgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				EC01C0A91E0359260019C4EC /* launchScreen_2.png */,
+				EC01C0AA1E0359260019C4EC /* launchScreenFond.jpg */,
 				EC2BF4AB1DF9F485005D37DA /* backgroundPokemon.jpg */,
 				EC2BF4AC1DF9F485005D37DA /* backgroundTypes.jpg */,
 				EC2BF4AD1DF9F485005D37DA /* launchScreen.jpg */,
@@ -285,6 +293,7 @@
 		EC6179A71DF0B33800AB21F9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EC01C0A71E0358FB0019C4EC /* titre_v3.png */,
 				EC2BF4F61DFA007D005D37DA /* titre_v2.png */,
 				EC2BF4BF1DF9F8CF005D37DA /* types */,
 				EC2BF4B11DF9F48D005D37DA /* lesSections */,
@@ -405,7 +414,7 @@
 				ECF3A6CE1DE775FF0034885C /* AppDelegate.swift */,
 				EC2BF5041DFA0A81005D37DA /* ViewController.swift */,
 				EC2BF4F21DF9FA15005D37DA /* Intro.swift */,
-				EC5EBA241E01F2B700FED6B3 /* Main.storyboard */,
+				EC01C0A51E0354C60019C4EC /* Main.storyboard */,
 				ECF3A6D51DE775FF0034885C /* Assets.xcassets */,
 				EC2BF4BD1DF9F4BB005D37DA /* Launch Screen.storyboard */,
 				ECF3A6DA1DE775FF0034885C /* Info.plist */,
@@ -519,8 +528,9 @@
 				ECF3A6D61DE775FF0034885C /* Assets.xcassets in Resources */,
 				EC2BF4E81DF9F8CF005D37DA /* type-shadow.png in Resources */,
 				EC2BF5291DFA0BDE005D37DA /* listeType-fire.png in Resources */,
-				EC5EBA261E01F2B700FED6B3 /* Main.storyboard in Resources */,
+				EC01C0A61E0354C60019C4EC /* Main.storyboard in Resources */,
 				EC2BF4E91DF9F8CF005D37DA /* type-none.png in Resources */,
+				EC01C0AB1E0359260019C4EC /* launchScreen_2.png in Resources */,
 				EC2BF4D81DF9F8CF005D37DA /* type-poison.png in Resources */,
 				EC2BF54E1DFA0C91005D37DA /* typesPage-bug.png in Resources */,
 				EC6179B51DF0B34700AB21F9 /* interface-01.png in Resources */,
@@ -545,6 +555,7 @@
 				EC2BF4DE1DF9F8CF005D37DA /* type-fire.png in Resources */,
 				EC6179B91DF0B34700AB21F9 /* interface-05.png in Resources */,
 				EC2BF5501DFA0C91005D37DA /* typesPage-steel.png in Resources */,
+				EC01C0AC1E0359260019C4EC /* launchScreenFond.jpg in Resources */,
 				EC2BF4E31DF9F8CF005D37DA /* type-ice.png in Resources */,
 				EC2BF5491DFA0C91005D37DA /* typesPage-fighting.png in Resources */,
 				ECE2E8041DFA1F6100748E9B /* silouette.png in Resources */,
@@ -592,6 +603,7 @@
 				EC6179BC1DF0B34700AB21F9 /* interface-08.png in Resources */,
 				EC2BF5231DFA0BDE005D37DA /* listeType-poison.png in Resources */,
 				EC6179BD1DF0B34700AB21F9 /* interface-09.png in Resources */,
+				EC01C0A81E0358FB0019C4EC /* titre_v3.png in Resources */,
 				EC6179C01DF0B34700AB21F9 /* interface-12.png in Resources */,
 				EC2BF4F71DFA007D005D37DA /* titre_v2.png in Resources */,
 				EC2BF52D1DFA0BDE005D37DA /* listeType-psychic.png in Resources */,
@@ -620,12 +632,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EC5EBA241E01F2B700FED6B3 /* Main.storyboard */ = {
+		EC01C0A51E0354C60019C4EC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EC5EBA251E01F2B700FED6B3 /* Base */,
+				EC01C0A41E0354C60019C4EC /* Base */,
 			);
 			name = Main.storyboard;
+			path = "../../pokeapi-master/PokeAPI";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

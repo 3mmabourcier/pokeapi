@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, TypeViewDelegate {
+
+
+class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegate {
+    
     var UrlPokemon = "https://pokeapi.co/api/v2/type/1"
     var RequeteUrl = URL(string: "")
     var pokemonUrlList = Array<Dictionary<String, String>>()
@@ -19,16 +22,11 @@ class ViewController: UIViewController, UITableViewDataSource, TypeViewDelegate 
     let limit = 1000
     var etatBtCap = false
     
+    
     @IBOutlet weak var btCapture: UIButton!
     
     @IBOutlet weak var monTableView: UITableView!
-
-
-    @IBAction func goToType(_ sender: AnyObject) {
-        let viewType = listeTypeViewController()
-        viewType.delegate = self
-        self.present(viewType, animated: true)
-    }
+    
     func returnTypeUrl(info: String) {
         UrlPokemon = info
         print("le url de type \(info)")
@@ -36,16 +34,34 @@ class ViewController: UIViewController, UITableViewDataSource, TypeViewDelegate 
         getPokemonListFromTypeUrl(leUrl: RequeteUrl!)
     }
     
+    func envoieDuType(info:String){
+        print("les infos de type\(info)")
+        pokemonUrlList = Array<Dictionary<String, String>>()
+        returnTypeUrl(info: info)
+        monTableView.reloadData()
+    }
+    
+    @IBAction func goToType(_ sender: AnyObject) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        //segue.destination
+        if segue.identifier == "showType"{
+            let vcType:listeTypeViewController = segue.destination as! listeTypeViewController
+            vcType.delegate = self
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         //Voir tester silouette
         /*//http://stackoverflow.com/questions/32538700/outline-path-of-a-image-silhouette-in-swift
          */
         //let UrlPokemon = "https://pokeapi.co/api/v2/pokemon/?limit=\(limit)"
-        
-        RequeteUrl = URL(string: UrlPokemon)!
-        getPokemonListFromTypeUrl(leUrl: RequeteUrl!)
-        
+        returnTypeUrl(info: UrlPokemon)
         
         //getPokemonListFromUrl(leUrl: DepartUrl)
         
@@ -56,17 +72,20 @@ class ViewController: UIViewController, UITableViewDataSource, TypeViewDelegate 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Le count \(pokemonUrlList.count)")
-        var count = pokemonUrlList.count
+        var count = 0
         if etatBtCap{
             for pokemon in pokemonUrlList{
                 if let leId = pokemon["name"]{
                     if let leBool = capturedList[leId]{
                         if(leBool){
                             count += 1
+                            print("Le count capturer\(count)")
                         }
                     }
                 }
             }
+        }else{
+            count = pokemonUrlList.count
         }
         return count
     }
@@ -166,7 +185,7 @@ class ViewController: UIViewController, UITableViewDataSource, TypeViewDelegate 
             if let _liens = lesInfos["sprites"] as? Dictionary<String,Any> {
                 print("Liens trouvé")
                 laCellulle.img.image = UIImage(named: "1.png")
-                if let _lien = _liens["front_default"] as! String!{
+                if let _lien = _liens["front_default"] as? String{
                     let _url = URL(string: _lien)
                         if let _data = NSData(contentsOf: _url!) as? Data {
                             let _img = UIImage(data: _data)
@@ -257,6 +276,9 @@ class ViewController: UIViewController, UITableViewDataSource, TypeViewDelegate 
     }
     
     @IBAction func rechercheCapture(_ sender: AnyObject) {
+        // Arrêter l'affichage Asyc Sinon erreur
+        
+        
         etatBtCap = !etatBtCap
         
         if etatBtCap{
