@@ -26,7 +26,7 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource {
         print("les types load")
         let UrlType = "https://pokeapi.co/api/v2/type"
         let DepartUrl = URL(string: UrlType)!
-        if typeList.isEmpty{
+        if typeList.isEmpty{//si la liste mémorisé est vide faire la requête pour la trouver
             getTypeListFromUrl(leUrl: DepartUrl)
         }else{
             leCollView.reloadData()
@@ -35,7 +35,8 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func sendType(_ sender: AnyObject) {
+    @IBAction func sendType(_ sender: AnyObject) {//envoie les url pour la requête du type selon la cellule cliqué
+        //utilise un délégate
 
         var indexPath: IndexPath!
         if let button = sender as? UIButton {
@@ -51,7 +52,7 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource {
                 }
             }
         }
-        
+        //supprime la view et revien àa la dernière
         self.dismiss(animated: true)
     }
     

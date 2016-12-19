@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Un-AA-lTu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PgB-RD-teI">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -11,33 +11,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Intro-->
-        <scene sceneID="X83-Un-EsJ">
-            <objects>
-                <viewController id="5Un-AA-lTu" customClass="Intro" customModule="PokeAPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SeK-EV-XAk"/>
-                        <viewControllerLayoutGuide type="bottom" id="A2e-ov-w1n"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nSi-lQ-fTM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchScreen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2qZ-gN-TyE">
-                                <frame key="frameInset" width="375"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="versMenuPrincipal" id="1Ar-GD-qea"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ryo-9n-E50" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-938.39999999999998" y="36.431784107946029"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -55,8 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="interface-04.png"/>
                                 <connections>
-                                    <action selector="goToType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FZk-jn-FkV"/>
-                                    <segue destination="IND-KZ-mcT" kind="show" identifier="showType" id="M6A-7a-hQe"/>
+                                    <segue destination="q9E-H6-rgL" kind="show" identifier="showType" id="W6U-TU-I91"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5re-zH-wQP">
@@ -106,6 +78,7 @@
                                             <outlet property="champId" destination="AQO-bo-PJu" id="akI-gP-Avk"/>
                                             <outlet property="champNom" destination="JaM-Jo-6fR" id="NSV-dI-XvF"/>
                                             <outlet property="img" destination="o6a-6v-nPh" id="DyA-mJ-8HJ"/>
+                                            <segue destination="8wt-sr-s7C" kind="show" identifier="showPokemon" id="Pai-2Y-tNL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonCapture" rowHeight="84" id="Rqp-UJ-6Z0" customClass="PokemonTableViewCell" customModule="PokeAPI" customModuleProvider="target">
@@ -154,6 +127,7 @@
                                             <outlet property="champId" destination="CvY-H0-Z1r" id="u3f-6g-Pk3"/>
                                             <outlet property="champNom" destination="ozv-hu-Oec" id="n0s-NZ-mdr"/>
                                             <outlet property="img" destination="vdX-uZ-3kx" id="ZBi-mr-nNN"/>
+                                            <segue destination="y7G-Mn-29l" kind="show" identifier="showPokemonCapturer" id="BB7-aJ-6GM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -178,223 +152,407 @@
                     </view>
                     <connections>
                         <outlet property="btCapture" destination="e5H-Tg-9fI" id="PYw-cJ-LMc"/>
-                        <outlet property="monTableView" destination="5re-zH-wQP" id="Awb-UD-Njj"/>
+                        <outlet property="monTableView" destination="5re-zH-wQP" id="KGm-D4-0fZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="41.829085457271368"/>
         </scene>
-        <!--Liste Type View Controller-->
-        <scene sceneID="Ykn-tJ-CEh">
+        <!--Intro-->
+        <scene sceneID="QmY-eP-mu9">
             <objects>
-                <viewController id="IND-KZ-mcT" customClass="listeTypeViewController" customModule="PokeAPI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PgB-RD-teI" customClass="Intro" customModule="PokeAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mQ9-O4-oCY"/>
-                        <viewControllerLayoutGuide type="bottom" id="1eF-2m-qia"/>
+                        <viewControllerLayoutGuide type="top" id="6GS-tH-Ttr"/>
+                        <viewControllerLayoutGuide type="bottom" id="dOo-le-e9J"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gYV-qe-TgK">
+                    <view key="view" contentMode="scaleToFill" id="oqV-3n-qXl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundTypes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jFM-ui-zpb">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundPokemon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8se-dn-fqg">
+                                <frame key="frameInset" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pageTypesSection.png" translatesAutoresizingMaskIntoConstraints="NO" id="dkb-1t-Mrb">
-                                <frame key="frameInset" minX="16" width="343" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchScreen_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="g1u-Hm-qU1">
+                                <frame key="frameInset" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xAf-jH-Fzt">
-                                <frame key="frameInset" minX="85" minY="31" height="68" maxX="86"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="titre_v2.png" translatesAutoresizingMaskIntoConstraints="NO" id="6e6-Jp-KaK">
+                                <frame key="frameInset" minX="47" minY="76" height="87" maxX="48"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="versMenuPrincipal" id="OqC-Vi-86p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eyg-87-Zoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1087" y="42"/>
+        </scene>
+        <!--Liste Type View Controller-->
+        <scene sceneID="vtT-Lg-f94">
+            <objects>
+                <viewController id="q9E-H6-rgL" customClass="listeTypeViewController" customModule="PokeAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qLa-l3-TA9"/>
+                        <viewControllerLayoutGuide type="bottom" id="lLe-jV-e2n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dXO-SM-qNE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundTypes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YEe-4n-Stq">
+                                <frame key="frameInset" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pageTypesSection.png" translatesAutoresizingMaskIntoConstraints="NO" id="GaP-3I-Qaz">
+                                <frame key="frameInset" minX="16" minY="33" height="601" maxX="16"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VIR-vH-u7b">
+                                <frame key="frameInset" minX="85" minY="45" height="82" maxX="86"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="37"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdz-9f-H1k">
-                                <frame key="frameInset" minY="59" width="51" height="50" maxX="313"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLj-Hs-fSN">
+                                <frame key="frameInset" minX="9" minY="13" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="interface-01.png"/>
                                 <connections>
-                                    <action selector="sendType:" destination="IND-KZ-mcT" eventType="touchUpInside" id="yuW-kt-y7Q"/>
+                                    <action selector="sendType:" destination="q9E-H6-rgL" eventType="touchUpInside" id="yfB-KE-Fee"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W8g-JF-S2p">
-                                <frame key="frameInset" minX="33" minY="117" width="309" height="517"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ajc-Mq-xl2">
+                                <frame key="frameInset" minX="35" minY="116" maxX="31" maxY="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QSC-yc-NJa">
-                                    <size key="itemSize" width="98" height="97"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="h3Z-nM-Zkx">
+                                    <size key="itemSize" width="90" height="95"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="type" id="pUU-qu-gXz" customClass="TypeCollectionViewCell" customModule="PokeAPI" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="97"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="type" id="rlu-Ab-8fc" customClass="TypeCollectionViewCell" customModule="PokeAPI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="98" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-69-NE0">
-                                                    <frame key="frameInset" minX="4" minY="4" width="90" height="89"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsB-AL-rIW">
+                                                    <frame key="frameInset" width="90" height="95"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" backgroundImage="type-dragon.png"/>
+                                                    <state key="normal" backgroundImage="type-none.png"/>
                                                     <connections>
-                                                        <action selector="sendType:" destination="IND-KZ-mcT" eventType="touchUpInside" id="RCr-y5-bHa"/>
+                                                        <action selector="sendType:" destination="q9E-H6-rgL" eventType="touchUpInside" id="Zmn-QB-0DP"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </view>
                                         <connections>
-                                            <outlet property="bt" destination="h0D-69-NE0" id="Qhh-ji-5w1"/>
+                                            <outlet property="bt" destination="jsB-AL-rIW" id="uda-gG-8pS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="IND-KZ-mcT" id="iTX-sM-v4q"/>
+                                    <outlet property="dataSource" destination="q9E-H6-rgL" id="aVU-MB-Duc"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NRl-PW-OfS"/>
                     <connections>
-                        <outlet property="leCollView" destination="W8g-JF-S2p" id="0RO-dx-XMn"/>
+                        <outlet property="leCollView" destination="ajc-Mq-xl2" id="GS4-2Q-OvT"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mq5-hd-khq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luG-x5-OJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="-209"/>
+            <point key="canvasLocation" x="-679" y="859"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="i9k-K8-jWR">
+        <!--Pokemon Capturer View Controller-->
+        <scene sceneID="NXj-ig-PFu">
             <objects>
-                <viewController id="OAv-uN-eAg" sceneMemberID="viewController">
+                <viewController id="y7G-Mn-29l" customClass="PokemonCapturerViewController" customModule="PokeAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YTw-Up-QuG"/>
-                        <viewControllerLayoutGuide type="bottom" id="eTj-ih-lwm"/>
+                        <viewControllerLayoutGuide type="top" id="FJQ-XR-a75"/>
+                        <viewControllerLayoutGuide type="bottom" id="K4x-Ot-YiC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OQX-3m-JJv">
+                    <view key="view" contentMode="scaleToFill" id="fis-Hu-F7U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundPokemon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JgF-Fh-FG9">
-                                <frame key="frameInset" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundPokemon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8Gd-vV-M87">
+                                <frame key="frameInset" minY="0.0%" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeSection.png" translatesAutoresizingMaskIntoConstraints="NO" id="tyq-BP-fZq">
+                                <frame key="frameInset" minX="46" minY="55" height="612" maxX="45"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-08.png" translatesAutoresizingMaskIntoConstraints="NO" id="YqI-II-vNP">
+                                <frame key="frameInset" minX="84" minY="120" width="206" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeSection.png" translatesAutoresizingMaskIntoConstraints="NO" id="TGg-oN-8sy">
-                                <frame key="frameInset" minX="46" minY="55" width="284" height="612"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQY-2H-Yhp">
+                                <frame key="frameInset" minX="110" minY="133" width="154" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-08.png" translatesAutoresizingMaskIntoConstraints="NO" id="MIM-J7-JbH">
-                                <frame key="frameInset" minX="48.52%" minY="151" width="206" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeTxt.png" translatesAutoresizingMaskIntoConstraints="NO" id="sjU-4k-dQE">
+                                <frame key="frameInset" width="336" height="538" maxX="23" maxY="-195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qkk-sW-eZ5">
-                                <frame key="frameInset" minX="49.10%" minY="164" width="154" height="152"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-10.png" translatesAutoresizingMaskIntoConstraints="NO" id="DP7-AX-8XN">
-                                <frame key="frameInset" minX="66.10%" minY="371" width="24" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-09.png" translatesAutoresizingMaskIntoConstraints="NO" id="Djd-P3-Ymw">
-                                <frame key="frameInset" minX="33.05%" minY="371" width="24" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSd-9R-h0w">
-                                <frame key="frameInset" minX="46" minY="71" height="57" maxX="47"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ke4-53-x2p">
+                                <frame key="frameInset" width="236" height="244" maxX="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8u-Wn-lv3">
+                                        <frame key="frameInset" minX="8" minY="8" width="60" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSI-nA-MUX">
+                                        <frame key="frameInset" minX="78" minY="124" width="150" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <color key="textColor" red="0.035294117649999998" green="0.2470588235" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="69" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0H-Dm-0xa">
+                                        <frame key="frameInset" minX="79" minY="95" width="149" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <color key="textColor" red="0.035294117649999998" green="0.2470588235" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chlorophyll" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-sS-Sod">
+                                        <frame key="frameInset" minX="96" minY="66" width="132" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <color key="textColor" red="0.035294117649999998" green="0.2470588235" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzE-ey-txI">
+                                        <frame key="frameInset" minX="83" minY="37" width="145" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <color key="textColor" red="0.035294117649999998" green="0.2470588235" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bulbasaur" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6By-fN-sNh">
+                                        <frame key="frameInset" minX="63" minY="8" width="165" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <color key="textColor" red="0.035294117649999998" green="0.2470588235" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFE-cm-cDP">
+                                        <frame key="frameInset" minX="8" minY="37" width="68" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abilities:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXc-ko-bIn">
+                                        <frame key="frameInset" minX="8" minY="66" width="84" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlG-bQ-p5R">
+                                        <frame key="frameInset" minX="8" minY="95" width="74" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GE2-yb-muV">
+                                        <frame key="frameInset" minX="8" minY="124" width="74" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgB-XR-l7l">
+                                <frame key="frameInset" minX="46" minY="55" height="57" maxX="47"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-06.png" translatesAutoresizingMaskIntoConstraints="NO" id="zaO-yP-L2Y">
-                                <frame key="frameInset" minX="16" minY="20" width="56" height="42"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-10.png" translatesAutoresizingMaskIntoConstraints="NO" id="lex-UR-nRn">
+                                <frame key="frameInset" minX="231" minY="323" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeTxt.png" translatesAutoresizingMaskIntoConstraints="NO" id="69U-sh-xI1">
-                                <frame key="frameInset" minX="33" minY="324" width="301" height="538"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-09.png" translatesAutoresizingMaskIntoConstraints="NO" id="gF3-EK-Ah4">
+                                <frame key="frameInset" minX="119" minY="323" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="qrd-tl-K8i">
-                                <frame key="frameInset" minX="50.15%" minY="361" width="42" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oh9-pI-DuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="864.79999999999995" y="496.10194902548727"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="BIn-2Y-F7X">
-            <objects>
-                <viewController id="zT5-gv-y2D" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JIe-4d-eJV"/>
-                        <viewControllerLayoutGuide type="bottom" id="Fvz-9I-dzU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Hf-5N-7Aq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundPokemon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uSi-b3-jli">
-                                <frame key="frameInset" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-62.png" translatesAutoresizingMaskIntoConstraints="NO" id="cDV-EJ-08X">
+                                <frame key="frameInset" minX="166" minY="313" width="42" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeSection.png" translatesAutoresizingMaskIntoConstraints="NO" id="oUw-KV-iBW">
-                                <frame key="frameInset" minX="45" minY="55" width="284" height="612"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-62.png" translatesAutoresizingMaskIntoConstraints="NO" id="s5m-7q-bWo">
+                                <frame key="frameInset" minX="166" minY="313" width="42" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeTxt.png" translatesAutoresizingMaskIntoConstraints="NO" id="R2t-Su-JFy">
-                                <frame key="frameInset" minX="33" minY="281" width="301" height="538"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQi-Xs-svg">
+                                <frame key="frameInset" minX="16" minY="17" width="56" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-06.png" translatesAutoresizingMaskIntoConstraints="NO" id="iB3-Xi-47T">
-                                <frame key="frameInset" minX="16" minY="20" width="56" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AD2-bU-Wao">
-                                <frame key="frameInset" minX="46" minY="70" height="57" maxX="47"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="39"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enx-qF-rHm">
-                                <frame key="frameInset" minX="48.77%" minY="148" width="132" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-MR-fHs">
-                                <frame key="frameInset" minX="50.45%" minY="313" width="42" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-10.png" translatesAutoresizingMaskIntoConstraints="NO" id="77Y-o0-g0O">
-                                <frame key="frameInset" minX="66.67%" minY="323" width="24" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-09.png" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-cW-ZaW">
-                                <frame key="frameInset" minX="33.05%" minY="323" width="24" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-WL-Zih">
-                                <frame key="frameInset" minX="121" minY="606" width="131" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="interface-07.png"/>
+                                <state key="normal" backgroundImage="interface-06.png"/>
+                                <connections>
+                                    <action selector="btRetour:" destination="y7G-Mn-29l" eventType="touchUpInside" id="U4B-ku-Mhq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="Image" destination="sQY-2H-Yhp" id="cB2-hl-0M9"/>
+                        <outlet property="chAbility" destination="xdv-sS-Sod" id="SeJ-Kv-teq"/>
+                        <outlet property="chHeight" destination="dSI-nA-MUX" id="Pey-ZM-fwA"/>
+                        <outlet property="chNo" destination="AzE-ey-txI" id="Fs2-Yb-4sj"/>
+                        <outlet property="chNom" destination="6By-fN-sNh" id="AGf-ir-9G2"/>
+                        <outlet property="chWeight" destination="V0H-Dm-0xa" id="5wX-ZI-Nd9"/>
+                        <outlet property="nom" destination="FgB-XR-l7l" id="csa-zJ-F12"/>
+                        <outlet property="type1" destination="s5m-7q-bWo" id="f5F-AX-sA9"/>
+                        <outlet property="type2" destination="cDV-EJ-08X" id="qLW-U8-RnL"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="juS-hl-twD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5At-YR-WuT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677.5999999999999" y="495.20239880059972"/>
+            <point key="canvasLocation" x="226" y="812"/>
+        </scene>
+        <!--Pokemon View Controller-->
+        <scene sceneID="Mmq-p0-SgX">
+            <objects>
+                <viewController id="8wt-sr-s7C" customClass="PokemonViewController" customModule="PokeAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aFF-1f-tJ3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dko-of-ENl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EdF-dq-gyo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundPokemon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2ak-Nm-wqf">
+                                <frame key="frameInset" minY="0.0%" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeSection.png" translatesAutoresizingMaskIntoConstraints="NO" id="GLl-oL-GnF">
+                                <frame key="frameInset" minX="45" minY="55" height="612" maxX="46"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pagePokeTxt.png" translatesAutoresizingMaskIntoConstraints="NO" id="qsb-B4-aVG">
+                                <frame key="frameInset" width="335" height="488" maxX="24" maxY="-152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGH-YB-Kw1">
+                                <frame key="frameInset" minX="46" minY="55" height="57" maxX="47"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-bug.png" translatesAutoresizingMaskIntoConstraints="NO" id="nMW-Hb-1aO">
+                                <frame key="frameInset" minX="168" minY="313" width="42" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-10.png" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-gl-lTj">
+                                <frame key="frameInset" minX="234" minY="323" width="24" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="interface-09.png" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-QS-E6U">
+                                <frame key="frameInset" minX="116" minY="323" width="24" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRb-Rh-8ck">
+                                <frame key="frameInset" minX="112" minY="120" width="151" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nb8-nx-hdJ">
+                                <frame key="frameInset" width="232" height="249" maxX="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gs5-fn-zYB">
+                                        <frame key="frameInset" minX="46" minY="185" width="131" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="interface-07.png"/>
+                                        <connections>
+                                            <action selector="btCapture:" destination="8wt-sr-s7C" eventType="touchUpInside" id="lt6-r8-yFO"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bulbasaur" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-HJ-nEM">
+                                        <frame key="frameInset" minX="67" minY="10" width="165" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <color key="textColor" red="0.035294117649999998" green="0.2470588235" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNn-v4-FyO">
+                                        <frame key="frameInset" minX="7" minY="39" width="68" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCc-9R-gy5">
+                                        <frame key="frameInset" minX="7" minY="10" width="60" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gj-9y-HBN">
+                                        <frame key="frameInset" minX="79" minY="39" width="153" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MisterVampire" family="MisterVampire" pointSize="14"/>
+                                        <color key="textColor" red="0.035294117649999998" green="0.2470588235" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xP-T1-C5D">
+                                <frame key="frameInset" minX="16" minY="20" width="56" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="interface-06.png"/>
+                                <connections>
+                                    <action selector="btRetour:" destination="8wt-sr-s7C" eventType="touchUpInside" id="hDF-p0-EdY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="typesPage-bug.png" translatesAutoresizingMaskIntoConstraints="NO" id="XmL-9X-ebv">
+                                <frame key="frameInset" minX="168" minY="313" width="42" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="Image" destination="CRb-Rh-8ck" id="FFU-BK-Oxh"/>
+                        <outlet property="chNo" destination="8gj-9y-HBN" id="HUC-0v-D2n"/>
+                        <outlet property="chNom" destination="OHZ-HJ-nEM" id="8ux-Id-Wre"/>
+                        <outlet property="nom" destination="cGH-YB-Kw1" id="WGn-d9-R2E"/>
+                        <outlet property="type1" destination="XmL-9X-ebv" id="Pyx-mh-9rY"/>
+                        <outlet property="type2" destination="nMW-Hb-1aO" id="MkC-di-6qW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GRR-2E-Gii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="27"/>
         </scene>
     </scenes>
     <resources>
@@ -411,14 +569,15 @@
         <image name="interface-10.png" width="311" height="125"/>
         <image name="interface-11.png" width="794" height="515"/>
         <image name="interface-14.png" width="339" height="158"/>
-        <image name="launchScreen.jpg" width="750" height="1334"/>
+        <image name="launchScreen_2.png" width="750" height="1334"/>
         <image name="listeType-dark.png" width="858" height="241"/>
         <image name="listeType-ghost.png" width="858" height="241"/>
         <image name="pagePokeSection.png" width="750" height="1334"/>
         <image name="pagePokeTxt.png" width="750" height="1334"/>
         <image name="pageTypesSection.png" width="750" height="1334"/>
         <image name="titre_v2.png" width="1188" height="283"/>
-        <image name="type-dragon.png" width="333" height="353"/>
-        <image name="typesPage-50.png" width="314" height="313"/>
+        <image name="type-none.png" width="333" height="356"/>
+        <image name="typesPage-62.png" width="313" height="313"/>
+        <image name="typesPage-bug.png" width="313" height="313"/>
     </resources>
 </document>
