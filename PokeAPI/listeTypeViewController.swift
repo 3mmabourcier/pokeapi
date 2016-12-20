@@ -64,7 +64,6 @@ class listeTypeViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("le count \(typeList.count)")
         return typeList.count
-        //return typeList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let uneCell:TypeCollectionViewCell

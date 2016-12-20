@@ -39,12 +39,24 @@ class PokemonCapturerViewController: UIViewController {
         if let _nom = lesInfos["name"] as? String {
             nom.text = "\(_nom)"
             chNom.text = "\(_nom)"
+            print(_nom)
         }
+        
         if let _id = lesInfos["id"] as? Int {
             if(_id<10000){
                 chNo.text = "\(_id)"
             }else{
                 chNo.text = "None"
+            }
+            if let _nom = lesInfos["name"] as? String {
+                let imgNom = "\(String(_id))\(_nom).png" as String
+                print(imgNom)
+                if let _img = UIImage(named:imgNom){
+                    Image.image = _img
+                    print("image Set")
+                }else{
+                    Image.image = UIImage(named:"pokemonSubstitute.png")
+                }
             }
         }
         
@@ -58,10 +70,10 @@ class PokemonCapturerViewController: UIViewController {
             if let _ability = _abilities[0]["ability"] as? Dictionary<String,String>{
                 if let _abilityName = _ability["name"]{
                     chAbility.text = "\(_abilityName)"
+                    print(_abilityName)
                 }
             }
         }
-        //////// CHANGER LES NOM DE TYPEPAGES-LETYPEpng
         if let _lesTypes = lesInfos["types"] as? Array<Dictionary<String,Any>>{
             for type in _lesTypes{
                 
@@ -80,8 +92,10 @@ class PokemonCapturerViewController: UIViewController {
                     
                 }
                 
+            
             }
         }
+        print("infos Affiché")
         
     }
     

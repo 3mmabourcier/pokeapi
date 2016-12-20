@@ -10,11 +10,12 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegate {
+class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegate, CapturerDelegate  {
     
     var UrlPokemon = "https://pokeapi.co/api/v2/type/1"
     var RequeteUrl = URL(string: "")
     var pokemonUrlList = Array<Dictionary<String, String>>()
+    var pokemonAfficherUrlList = Array<Dictionary<String, String>>()
     var pokemonList = Dictionary<String,Dictionary<String, Any>>()
     var pokemonImgList = Dictionary<String,UIImage>()
     var capturedList = Dictionary<String,Bool>()
@@ -27,8 +28,17 @@ class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegat
     
     @IBOutlet weak var monTableView: UITableView!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        monTableView.reloadData()
+        returnTypeUrl(info: UrlPokemon)
+        
+    }
+    
+    
     func returnTypeUrl(info: String) {
-        UrlPokemon = info
+        UrlPokemon = info 
         print("le url de type \(info)")
         RequeteUrl = URL(string: UrlPokemon)!
         getPokemonListFromTypeUrl(leUrl: RequeteUrl!)//recherche de donné selon le url en paramêtre
@@ -39,6 +49,13 @@ class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegat
         pokemonUrlList = Array<Dictionary<String, String>>()
         returnTypeUrl(info: info)
         monTableView.reloadData()//réception du type du VC type et changement des donné
+        
+        
+    }
+    
+    func envoieDuLaCapture(info: String) {
+        capturedList[info] = true
+        monTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,19 +65,29 @@ class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegat
         if segue.identifier == "showType"{//segue vers les type
             let vcType:listeTypeViewController = segue.destination as! listeTypeViewController
             vcType.delegate = self
-        }else{//autres segue (vers pokemon et pokemonCapturer)
+        }else if segue.identifier == "showPokemon"{//autres segue (vers pokemon et pokemonCapturer)
             //print("Autre segue\()")
-            
                 let laCell = sender as! PokemonTableViewCell
-                print("le nom sur click\(laCell)")
+
                     if let leNom = laCell.champNom.text{
-                        
                         print("le nom sur click\(leNom)")
                             let vcPokemon:PokemonViewController = segue.destination as! PokemonViewController
+                            vcPokemon.delegate = self
                             if let lesInfos = pokemonList[leNom]{
                                 vcPokemon.lePokemon = lesInfos
                             }
                     }
+            
+        }else if segue.identifier == "showPokemonCapturer"{//segue vers le pokemon
+            let laCell = sender as! PokemonTableViewCell
+            print("Show pokemon capturer go")
+            if let leNom = laCell.champNom.text{
+            
+                let vcPokemon:PokemonCapturerViewController = segue.destination as! PokemonCapturerViewController
+                if let lesInfos = pokemonList[leNom]{
+                    vcPokemon.lePokemon = lesInfos
+                }
+            }
             
         }
         
@@ -69,55 +96,53 @@ class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegat
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {//vérification si possible de faire le segue
         print("should?")
         if let ident = identifier {
-            if ident == "ShowPokemon" {
+            if(ident == "showPokemon"){
                 let laCell = sender as! PokemonTableViewCell
                 if let leNom = laCell.champNom.text{
-                    if let lesInfos = pokemonList[leNom]{
+                    print("ident3")
+                    if let pokemon = pokemonList[leNom]{
+                        print("ident4")
                         ////////Revoir la condition
                     }else{
                         print("should not")
                         return false
                     }
                 }// empêche de continuer sur la page d'un pokemon singulier si les infos ne sont pas chargé.
-                monTableView.reloadRows(at: [monTableView.indexPathForSelectedRow! as IndexPath], with: UITableViewRowAnimation(rawValue: 0)!)// reload la cellule cliqué si elle a fini de chargé.
+                //monTableView.reloadRows(at: [monTableView.indexPathForSelectedRow! as IndexPath], with: UITableViewRowAnimation(rawValue: 0)!)// reload la cellule cliqué si elle a fini de chargé.
+                 monTableView.reloadData()
             }
         }
+            
         
         return true
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        returnTypeUrl(info: UrlPokemon)
-        
-    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Le count \(pokemonUrlList.count)")
-        var count = 0
+        pokemonAfficherUrlList = Array<Dictionary<String , String>>()
         if etatBtCap{//si le bouton capturer montre l'état true, seulement les pokémon capturé son affiché
             for pokemon in pokemonUrlList{
                 if let leId = pokemon["name"]{
                     if let leBool = capturedList[leId]{
                         if(leBool){
-                            count += 1
-                            print("Le count capturer\(count)")
+                            pokemonAfficherUrlList.append(pokemon)
                         }
                     }
                 }
             }
         }else{//sinon tout les pokémon dans la list de url du type choisi sont montré
-            count = pokemonUrlList.count
+            pokemonAfficherUrlList = pokemonUrlList
         }
-        return count
+        return pokemonAfficherUrlList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         //initie la cellulle
         
-        let _id = pokemonUrlList[indexPath.row]["name"]! as String//cherche le id dans la liste
+        let _id = pokemonAfficherUrlList[indexPath.row]["name"]! as String//cherche le id dans la liste
         var uneCell:PokemonTableViewCell
         if let _cap = capturedList[_id] as Bool!{
             if (_cap){// si le pokemon est capturé associé choisi une cellule avec un identifiant différent
@@ -143,7 +168,7 @@ class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegat
             }
         }else{// si les info n'existe pas?
             //RECHERCHE DES INFO
-            if let _url = self.pokemonUrlList[indexPath.row]["url"] as String! {//rechercher selon le url
+            if let _url = self.pokemonAfficherUrlList[indexPath.row]["url"] as String! {//rechercher selon le url
                 afficherLoading(laCellulle: uneCell)//affiche la cellule de loading
                 self.pokemonList[_id] = Dictionary<String,Any>()//prépare le tableau vide pour évité les requête double
                 DispatchQueue.global().async {
@@ -208,6 +233,7 @@ class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegat
             }
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -253,7 +279,7 @@ class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegat
                     print("Conversion JSON du \(id)")
                     self.pokemonList[id] = ( json as Dictionary<String, Any>!)
                     //reload la cellule une fois les information chargé
-                    if(!etatBtCap){ //ne va pas essayer de reloader des thread qui ne sont plus afficher lorque le tri est pour les pokemon capturé
+                    if(!etatBtCap){ //ne va pas essayer d'afficher des thread qui ne sont plus afficher lorque le tri est pour les pokemon capturé
                         self.monTableView.reloadRows(at: [idPath], with: UITableViewRowAnimation(rawValue: 0)!)
                     }
                 
@@ -268,7 +294,6 @@ class ViewController: UIViewController, UITableViewDataSource, typeChoisiDelegat
     
     
     @IBAction func rechercheCapture(_ sender: AnyObject) {
-        //To do:
         etatBtCap = !etatBtCap
         
         if etatBtCap{//change l'état du bouton

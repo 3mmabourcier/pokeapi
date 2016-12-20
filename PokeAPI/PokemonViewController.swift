@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol CapturerDelegate{
+    func envoieDuLaCapture(info:String)
+}//CapturerDelegate
+
 class PokemonViewController: UIViewController {
+    
+    var delegate:CapturerDelegate? = nil
+    
+    
     var lePokemon = Dictionary<String,Any>()
     
     @IBOutlet weak var Image: UIImageView!
@@ -18,14 +26,24 @@ class PokemonViewController: UIViewController {
     @IBOutlet weak var chNom: UILabel!
     @IBOutlet weak var chNo: UILabel!
     
+    
     @IBAction func btRetour(_ sender: AnyObject) {
         self.dismiss(animated: true)
     }
     
     @IBAction func btCapture(_ sender: AnyObject) {
-        
+        if (delegate != nil){
+            if let information = lePokemon["name"]{
+                delegate!.envoieDuLaCapture(info: information  as! String)
+            }
+        }
+        self.dismiss(animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vcPokemon:PokemonCapturerViewController = segue.destination as! PokemonCapturerViewController
+        vcPokemon.lePokemon = lePokemon
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
