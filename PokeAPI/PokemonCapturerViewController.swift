@@ -60,10 +60,11 @@ class PokemonCapturerViewController: UIViewController {
             }
         }
         
-        if let _weight = lesInfos["weight"] as? String {
+        if let _weight = lesInfos["weight"] as? Int {
+            print("le weight \(_weight)")
             chWeight.text = "\(_weight)"
         }
-        if let _height = lesInfos["height"] as? String {
+        if let _height = lesInfos["height"] as? Int {
             chHeight.text = "\(_height)"
         }
         if let _abilities = lesInfos["abilities"] as? Array<Dictionary<String,Any>> {
